@@ -1,0 +1,8 @@
+#!/bin/sh
+
+PATH="/home/fraanaalonso/wordpress-5.7.2-0/apps/wordpress/bin:/home/fraanaalonso/wordpress-5.7.2-0/varnish/bin:/home/fraanaalonso/wordpress-5.7.2-0/sqlite/bin:/home/fraanaalonso/wordpress-5.7.2-0/php/bin:/home/fraanaalonso/wordpress-5.7.2-0/mariadb/bin:/home/fraanaalonso/wordpress-5.7.2-0/letsencrypt/:/home/fraanaalonso/wordpress-5.7.2-0/apache2/bin:/home/fraanaalonso/wordpress-5.7.2-0/common/bin:$PATH"
+BITNAMI_ROOT="/home/fraanaalonso/wordpress-5.7.2-0"
+export BITNAMI_ROOT
+
+
+exec /bin/bash --noprofile --norc

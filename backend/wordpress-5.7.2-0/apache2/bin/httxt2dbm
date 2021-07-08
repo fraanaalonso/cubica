@@ -1,0 +1,3 @@
+#!/bin/sh
+. /home/fraanaalonso/wordpress-5.7.2-0/apache2/bin/envvars
+exec /home/fraanaalonso/wordpress-5.7.2-0/apache2/bin/httxt2dbm.bin "$@"

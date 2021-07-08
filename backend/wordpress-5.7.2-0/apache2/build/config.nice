@@ -1,0 +1,34 @@
+#! /bin/sh
+#
+# Created by configure
+
+CC="gcc"; export CC
+CFLAGS="-I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/home/fraanaalonso/wordpress-5.7.2-0/common/include -fPIC -m64"; export CFLAGS
+CPPFLAGS="-I/home/fraanaalonso/wordpress-5.7.2-0/common/include"; export CPPFLAGS
+LDFLAGS="-L/home/fraanaalonso/wordpress-5.7.2-0/common/lib -liconv"; export LDFLAGS
+"./configure" \
+"--prefix=/home/fraanaalonso/wordpress-5.7.2-0/apache2" \
+"--enable-so" \
+"--enable-mods-shared=most" \
+"--disable-auth_dbm" \
+"--without-berkeley-db" \
+"--enable-deflate" \
+"--enable-ssl" \
+"--with-ssl=/home/fraanaalonso/wordpress-5.7.2-0/common" \
+"--enable-proxy" \
+"--enable-proxy-http" \
+"--enable-proxy-balancer" \
+"--enable-rewrite" \
+"--with-apr=/home/fraanaalonso/wordpress-5.7.2-0/common/bin/apr-1-config" \
+"--with-apu=/home/fraanaalonso/wordpress-5.7.2-0/common/bin/apr-1-config" \
+"--with-pcre=/home/fraanaalonso/wordpress-5.7.2-0/common/bin/pcre-config" \
+"--enable-mpms-shared=all" \
+"--with-nghttp2=/home/fraanaalonso/wordpress-5.7.2-0/common/lib" \
+"--with-mpm=prefork" \
+"--with-brotli=/home/fraanaalonso/wordpress-5.7.2-0/common" \
+"--enable-brotli" \
+"CC=gcc" \
+"CFLAGS=-I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/home/fraanaalonso/wordpress-5.7.2-0/common/include -fPIC -m64" \
+"LDFLAGS=-L/home/fraanaalonso/wordpress-5.7.2-0/common/lib -liconv" \
+"CPPFLAGS=-I/home/fraanaalonso/wordpress-5.7.2-0/common/include" \
+"$@"

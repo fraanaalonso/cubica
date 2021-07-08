@@ -1,0 +1,4 @@
+#!/bin/sh
+LD_LIBRARY_PATH=/home/fraanaalonso/wordpress-5.7.2-0/mariadb/lib:/home/fraanaalonso/wordpress-5.7.2-0/mariadb/../common/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH
+exec $0.bin "$@"

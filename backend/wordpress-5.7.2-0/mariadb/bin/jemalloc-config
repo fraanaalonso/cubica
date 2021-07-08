@@ -1,0 +1,79 @@
+#!/bin/sh
+
+usage() {
+	cat <<EOF
+Usage:
+  /bitnami/lamp74mariadbstack-linux-x64/output/mysql/bin/jemalloc-config <option>
+Options:
+  --help | -h  : Print usage.
+  --version    : Print jemalloc version.
+  --revision   : Print shared library revision number.
+  --config     : Print configure options used to build jemalloc.
+  --prefix     : Print installation directory prefix.
+  --bindir     : Print binary installation directory.
+  --datadir    : Print data installation directory.
+  --includedir : Print include installation directory.
+  --libdir     : Print library installation directory.
+  --mandir     : Print manual page installation directory.
+  --cc         : Print compiler used to build jemalloc.
+  --cflags     : Print compiler flags used to build jemalloc.
+  --cppflags   : Print preprocessor flags used to build jemalloc.
+  --ldflags    : Print library flags used to build jemalloc.
+  --libs       : Print libraries jemalloc was linked against.
+EOF
+}
+
+prefix="/bitnami/lamp74mariadbstack-linux-x64/output/mysql"
+exec_prefix="/bitnami/lamp74mariadbstack-linux-x64/output/mysql"
+
+case "$1" in
+--help | -h)
+	usage
+	exit 0
+	;;
+--version)
+	echo "4.2.1-0-g0"
+	;;
+--revision)
+	echo "2"
+	;;
+--config)
+	echo "--prefix=/bitnami/lamp74mariadbstack-linux-x64/output/mysql --with-version=4.2.1-0-g0 CC=gcc 'CFLAGS=-I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include -fPIC -m64' 'LDFLAGS=-L/bitnami/lamp74mariadbstack-linux-x64/output/sqlite/lib -L/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -L/bitnami/lamp74mariadbstack-linux-x64/output/mysql/lib -L/bitnami/lamp74mariadbstack-linux-x64/output/common/lib' 'CPPFLAGS=-DAI_ADDRCONFIG=0 -I/bitnami/lamp74mariadbstack-linux-x64/output/sqlite/include -I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include/sasl -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include'"
+	;;
+--prefix)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql"
+	;;
+--bindir)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql/bin"
+	;;
+--datadir)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql/share"
+	;;
+--includedir)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include"
+	;;
+--libdir)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql/lib"
+	;;
+--mandir)
+	echo "/bitnami/lamp74mariadbstack-linux-x64/output/mysql/share/man"
+	;;
+--cc)
+	echo "gcc"
+	;;
+--cflags)
+	echo "-I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include -fPIC -m64 -fvisibility=hidden"
+	;;
+--cppflags)
+	echo "-DAI_ADDRCONFIG=0 -I/bitnami/lamp74mariadbstack-linux-x64/output/sqlite/include -I/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include/sasl -I/bitnami/lamp74mariadbstack-linux-x64/output/common/include -D_GNU_SOURCE -D_REENTRANT"
+	;;
+--ldflags)
+	echo "-L/bitnami/lamp74mariadbstack-linux-x64/output/sqlite/lib -L/bitnami/lamp74mariadbstack-linux-x64/output/mysql/include -L/bitnami/lamp74mariadbstack-linux-x64/output/mysql/lib -L/bitnami/lamp74mariadbstack-linux-x64/output/common/lib "
+	;;
+--libs)
+	echo " -lpthread"
+	;;
+*)
+	usage
+	exit 1
+esac

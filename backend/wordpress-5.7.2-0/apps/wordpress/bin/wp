@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Check the user before running the command
+if [ `id | sed -e s/uid=//g -e s/\(.*//g` -eq 0 ]; then
+    echo "Please run this script without using admin privileges (without using the root user or sudo). This way, it will use the proper user to run the WordPress command" >> /dev/stderr
+    exit 1
+fi
+. /home/fraanaalonso/wordpress-5.7.2-0/scripts/setenv.sh
+export WP_CLI_CONFIG_PATH="/home/fraanaalonso/wordpress-5.7.2-0/apps/wordpress/bin/wp-cli.yml"
+export WP_CLI_CACHE_DIR="/home/fraanaalonso/wordpress-5.7.2-0/apps/wordpress/bin/.wp-cli"
+export WP_CLI_PHP_USED="/home/fraanaalonso/wordpress-5.7.2-0/php/bin/php"
+# Run the WordPress commands using the web servers' user and group
+/home/fraanaalonso/wordpress-5.7.2-0/php/bin/php /home/fraanaalonso/wordpress-5.7.2-0/apps/wordpress/bin/wp-cli.phar $*

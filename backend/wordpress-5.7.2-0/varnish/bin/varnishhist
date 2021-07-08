@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. /home/fraanaalonso/wordpress-5.7.2-0/scripts/setenv.sh
+
+exec /home/fraanaalonso/wordpress-5.7.2-0/varnish/bin/.varnishhist.bin -n /home/fraanaalonso/wordpress-5.7.2-0/varnish/var/varnish "$@"

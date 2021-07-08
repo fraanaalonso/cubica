@@ -1,0 +1,15 @@
+ #!/bin/sh
+LD_LIBRARY_PATH=/opt/codedx/mysql/lib:/opt/codedx/mysql/../common/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH
+case "$@" in
+  *--no-defaults*)
+    exec $0.bin "$@"
+    ;;
+  *--defaults-extra-file*)
+    exec $0.bin "$@"
+    ;;
+  *--defaults-file*)
+    exec $0.bin "$@"
+    ;;
+esac
+exec $0.bin --defaults-file=/home/fraanaalonso/wordpress-5.7.2-0/mariadb/my.cnf "$@"

@@ -1,0 +1,13 @@
+prefix=/home/fraanaalonso/wordpress-5.7.2-0/common
+exec_prefix=/home/fraanaalonso/wordpress-5.7.2-0/common
+libdir=/home/fraanaalonso/wordpress-5.7.2-0/common/lib
+includedir=/home/fraanaalonso/wordpress-5.7.2-0/common/include
+datarootdir=/home/fraanaalonso/wordpress-5.7.2-0/common/share
+datadir=/home/fraanaalonso/wordpress-5.7.2-0/common/share
+
+Name: oniguruma
+Description: Regular expression library
+Version: 6.9.4
+Requires:
+Libs: -L${libdir} -lonig
+Cflags: -I${includedir}
